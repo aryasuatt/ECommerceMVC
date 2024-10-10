@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Cart";
+}
+
+<h2>Your Cart</h2>
+
+<table class="cart-table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Laptop</td>
+            <td>$1200.00</td>
+            <td><input type="number" value="1" min="1" /></td>
+            <td>$1200.00</td>
+        </tr>
+        <tr>
+            <td>Smartphone</td>
+            <td>$799.00</td>
+            <td><input type="number" value="1" min="1" /></td>
+            <td>$799.00</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Total: $1999.00</p>
+<button class="checkout">Checkout</button>

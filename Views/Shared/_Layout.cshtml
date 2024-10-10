@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - E-Commerce Application</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* Light text */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>E-Commerce Application</h1>
+            <button id="themeToggle">Toggle Dark/Light Mode</button>
+        </nav>
+    </header>
+
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-Commerce Application</p>
+    </footer>
+
+    <script src="~/js/site.js"></script>
+    <script>
+        document.getElementById("themeToggle").addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+        });
+
+        window.onload = function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        };
+    </script>
+</body>
+</html>
